@@ -15,5 +15,3 @@
 Пояснення використання Future<Void> 
   Future<Void> resultFuture = executor.submit(new DivideAndProcessTask(numbers, 0, numbers.length, multiplier, executor, resultList));
 Future<Void> зручно використовувати оскільки нам необхідно виконати перевірки isDone() та isCancelled(). За допомогою нього можна контролювати виконання підзавдань, що виконується в пулі потоків, тобто без нього я б не змогла виконати перевірки isDone() та isCancelled() і метод future.get. Крім того, коли програма обробляє масив (в класі DivideAndProcessTask), задача не повертає який-небудь конкретний об'єкт чи значення — вона просто обробляє дані (множить числа на множник), зберігаючи результати в resultList.
-
-  
